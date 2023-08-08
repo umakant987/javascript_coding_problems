@@ -1,0 +1,45 @@
+/* Write a function that will iterate through variables compare each pair of variables and 
+will console log results of each pair of variables, 
+for example "console.log('a equals c')" or console.log('a not equals b') */
+
+// Thomson Reuters (1st round) Interview: React
+
+var a = {
+    firstName: "john",
+    lastName: "doe"
+};
+var b = {
+    firstName: "jane",
+    lastName: "doe"
+};
+var c = {
+    firstName: "john",
+    lastName: "doe"
+};
+var d = null;
+var e = NaN;
+var f = "";
+var g = Infinity;
+
+//Generated using chatGpt
+function compareVariables() {
+    const variables = [a, b, c, d, e, f, g];
+
+    for (let i = 0; i < variables.length; i++) {
+        for (let j = i + 1; j < variables.length; j++) {
+            const variable1 = variables[i];
+            const variable2 = variables[j];
+            const variable1Name = Object.keys(variable1)[0];
+            const variable2Name = Object.keys(variable2)[0];
+
+            if (JSON.stringify(variable1) === JSON.stringify(variable2)) {
+                console.log(`${variable1Name} equals ${variable2Name}`);
+            } else {
+                console.log(`${variable1Name} not equals ${variable2Name}`);
+            }
+        }
+    }
+}
+
+// Test the function
+compareVariables();

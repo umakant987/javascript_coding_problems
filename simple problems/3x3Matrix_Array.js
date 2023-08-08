@@ -1,4 +1,4 @@
-//10. print each element from 2X3 matrix (time complexity)
+//10. print each element from 3X3 matrix (time complexity)
 var arr = [
   [1, 2, 3],
   [4, 5, 6],

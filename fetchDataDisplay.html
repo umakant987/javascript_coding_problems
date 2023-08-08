@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Display</title>
+    <style>
+        /* Add some basic styling for the list */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>API Data Display</h1>
+    <button id="fetchDataBtn">Fetch Data</button>
+    <ul id="recordList"></ul>
+
+    <script>
+        // Function to fetch data from the API and update the UI
+        function fetchDataAndDisplay() {
+            // Replace 'YOUR_API_ENDPOINT' with the actual API endpoint URL
+            const apiUrl = 'https://dummyjson.com/products';
+
+            // Fetch data using the Fetch API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Clear the current list
+                    const recordList = document.getElementById('recordList');
+                    recordList.innerHTML = '';
+
+                    // Update the UI with the fetched data
+                    data.products.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = item.title; // Assuming 'name' is a property in the data
+                        recordList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Attach click event handler to the button
+        document.getElementById('fetchDataBtn').addEventListener('click', fetchDataAndDisplay);
+    </script>
+</body>
+
+</html>
