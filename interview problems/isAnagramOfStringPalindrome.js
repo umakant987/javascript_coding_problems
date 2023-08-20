@@ -12,7 +12,7 @@ function isAnagramOfStrIsPalindrome(str) {
     // }
     // create object with count of each character in the string.
     for (let i = 0; i < str.length; i++) {
-        if (str[i] in obj) {
+        if (str[i] in obj) { // for..in similar to for..of on object
             obj[str[i]]++;
         } else {
             obj[str[i]] = 1;

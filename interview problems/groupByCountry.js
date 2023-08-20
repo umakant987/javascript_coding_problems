@@ -1,7 +1,7 @@
 //2.   Get the count of persons group by country in give array of persons
 
 // [{id:1,name:"a"},{id:2,name:"b"},{id:3,name:"c"},{id:1,name:"d"},{id:3,name:"e"}]
-// Expected Output: [{id:1,name:["a","d"]},{id:2,name:"b"},{id:3,name:["c","e"]}
+// Expected Output: [{id:1,name:["a","d"]},{id:2,name:"b"},{id:3,name:["c","e"]}]
 
 var person = [
   {
@@ -43,11 +43,25 @@ const groupByCountry = (arr) => {
   return obj;
 };
 
-console.log("groupByCountry======>", groupByCountry(person));
+const result = groupByCountry(person);
+console.log("groupByCountry======>", result); // { US: [ 'xyz', 'xyz3' ], US1: [ 'xyz1' ], US2: [ 'xyz2' ] }
+
+// To make output like in example
+// Expected Output: [{id:1,name:["a","d"]},{id:2,name:"b"},{id:3,name:["c","e"]}]
+const resultArr = [];
+for (let key of Object.keys(result)) {
+  let obj = {};
+  obj['id'] = key;
+  obj['name'] = result[key];
+  resultArr.push(obj);
+}
+console.log("Final Result>>", resultArr);
 
 
-//Debug code
-// console.log("obj[person.address.country] Before ==>", obj[person.address.country]);
-// obj[person.address.country] = obj[person.address.country] || [];
-// console.log("obj[person.address.country] After ==>", obj[person.address.country]);
-// obj[person.address.country].push(person.name);
+
+// Group an array of objects by specific properties
+const groupByProperty = (arr, prop) => arr.reduce((result, obj) => (result[obj[prop]] = [...result[obj[prop]] || [], obj], result), {});
+const objArr = [{ id: 1, name: 'umakant' }, { id: 2, name: 'shivraj' }, { id: 3, name: 'umakant' }]
+
+const groupByResult = groupByProperty(objArr, 'name');
+console.log("groupByResult>>>>", groupByResult);

@@ -8,6 +8,12 @@ function debounce(callback, delay = 1000) {
     };
 }
 
+// const log = debounce(console.log, 2000);
+// log('Hi');    // cancelled
+// log('Hey');   // cancelled
+// log('Hello'); // Logged at t=100ms
+
+
 function throttle(callback, delay = 1000) {
     let shouldWait = false;
 
@@ -21,3 +27,13 @@ function throttle(callback, delay = 1000) {
         }, delay);
     };
 }
+
+const logT = throttle(console.log, 2000);
+const interval = setInterval(() => {
+    console.log("From setInterval")
+    logT('Hi from throttle');
+}, 1000);
+
+setTimeout(() => {
+    clearInterval(interval);
+}, 8000)

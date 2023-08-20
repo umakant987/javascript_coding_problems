@@ -25,11 +25,11 @@ let mySingleton = (function () {
 
 let Winner = mySingleton.getInstance('Winner');
 let WinnerName = Winner.getName();
-console.log(WinnerName);
+console.log(WinnerName); // Winner
 
 let Looser = mySingleton.getInstance('Looser');
 let LooserName = Looser.getName();
-console.log(LooserName);
+console.log(LooserName); // Winner
 
 // Example 1
 const Singleton = (function () {

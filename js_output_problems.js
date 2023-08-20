@@ -6,7 +6,7 @@
 
 // 2
 function myfunc() {
-    var b = 20;
+  var b = 20;
 }
 //console.log(b); // Reference error: b is not defined
 
@@ -58,12 +58,12 @@ console.log(sum(10, 20, 30)); // 60
 var sum = (a, b) => a + b;  */
 
 // 7.
-/* new Promise((resolve) => {
-    setTimeout(() => {
-      console.log('Promise');  // promise printed after 2 sec
-      resolve();
-    }, 2000);
-});  */
+new Promise((resolve) => {
+  setTimeout(() => {
+    console.log('Promise');  // promise printed after 2 sec
+    resolve();
+  }, 2000);
+});
 
 // 8.
 /* var p = setInterval(() => {
@@ -102,3 +102,52 @@ let b = 20;
 x()
     .then(r => console.log(r))
     .catch(err => console.log(err)); */
+
+
+// Mastercard
+// to check let var scoping knowledge
+// var x = 20;
+// let x = 50;
+// console.log(x); // SyntaxError: Identifier 'x' has already been declared
+
+// var x = 20;
+// var x = 50; // var allow's to redeclare a variable with same name but let doesn't
+// console.log(x);
+
+// to check prototype inheritance knowledge
+// var person = {
+//   course: 'java'
+// }
+// var ritu = Object.create(person); // creates a new object named ritu and sets its prototype to be the person object.
+// console.log(ritu.course); // java
+// console.log(delete ritu.course); // true: tries to delete the course property from the ritu object. but it is in prototype not directly on ritu obj
+// console.log(ritu.course); // java
+
+// to check event loop knowledge
+// console.log(1)
+// setTimeout(() => console.log(2), 0)
+// Promise.resolve(2).then(res => console.log(3))
+// console.log(4)
+
+
+// From 30 second of interview
+// To check hoisting knowledge
+// var foo = 1
+// var foobar = function () {
+//   console.log(foo) // undefined
+//   var foo = 2
+// }
+// foobar()
+
+// console.log(hoist) // undefined
+// var hoist = "value"
+
+// myFunction() // No error; logs "hello"
+// function myFunction() {
+//   console.log("hello")
+// }
+
+// myFunction() // Error: `myFunction` is not a function
+// var myFunction = function () {
+//   console.log("hello")
+// }
