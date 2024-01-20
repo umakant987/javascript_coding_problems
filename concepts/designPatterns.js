@@ -215,7 +215,7 @@ subject.notifyObservers('Another update.');
 
 
 //*************************************************************************
-//Module Pattern
+// Module Pattern
 // by using closure we expose an object
 // as a public API which manages the private objects array
 var collection = (function () {
