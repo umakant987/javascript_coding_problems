@@ -121,3 +121,26 @@ function merge(left, right) {
 const numberArr = [64, 34, 25, 12, 22, 11, 90];
 const sortedNumbers = mergeSort(numberArr);
 console.log(sortedNumbers); // Output: [11, 12, 22, 25, 34, 64, 90]
+
+// Insertion sort example
+function insertionSort(arr) {
+    var len = arr.length;
+    for (var i = 1; i < len; i++) {
+      var key = arr[i];
+      var j = i - 1;
+  
+      while (j >= 0 && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        j = j - 1;
+      }
+  
+      arr[j + 1] = key;
+    }
+    return arr;
+  }
+  
+  // Example usage:
+  var arrayToSort = [12, 11, 13, 5, 6];
+  var sortedArrayy = insertionSort(arrayToSort);
+  console.log("Sorted array:", sortedArrayy);
+  

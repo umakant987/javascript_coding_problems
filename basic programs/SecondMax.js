@@ -1,4 +1,4 @@
-//Second Highest using Math.max.apply and splice(producess incorrect result if there are duplicate elements in the array)
+//1. Second Highest using Math.max.apply and splice(producess incorrect result if there are duplicate elements in the array)
 function secondHighest() {
     let myArr = [4, 45, 45, 3, 4, 8];
     /*   let max = Math.max.apply(null,myArr); */
@@ -11,7 +11,7 @@ var result = secondHighest();
 console.log("Second Highest using Math.max.apply", result);
 
 
-//Second Highest using sort
+// 2. Second Highest using sort
 // here's your array :
 var stringArray = new Array('20', '120', '111', '215', '215', '54', '78');
 
@@ -28,9 +28,9 @@ console.log("Second Highest using sort", second);
 //Both of the above two ways gives incorrect second highest if there are duplicate highest number in the array
 //Below two ways are correct:
 
-//using sort with filter
+// using sort with filter
 let myArr = [4, 45, 45, 3, 4, 8];
-function processDataSort(myArray) {
+function secondHighestUsingSort(myArray) {
     let numArray = myArray.map(Number);
     numArray.sort(function (a, b) {
         return b - a;
@@ -39,42 +39,30 @@ function processDataSort(myArray) {
     console.log("Second Highest using sort", filteredArr[0]);
 }
 
-processDataSort(myArr);
+secondHighestUsingSort(myArr);
 
 //using Math.max.apply and filter
-function processDataMath(myArray) {
+function secondHighestUsingMathMax(myArray) {
     var largest = Math.max.apply(null, myArray);
     var filteredArr = myArray.filter((x) => x != largest);  //filter out the largest element
     var secondLargest = Math.max.apply(null, filteredArr)
     console.log("Second Highest using Math.max.apply", secondLargest);
 }
 
-processDataMath(myArr);
+secondHighestUsingMathMax(myArr);
 
 //************************************************************************************************************** */
 // secondMax without js functions like Math.max(), sort etc
-let nums = [1, 3, 20, 10, 15];
 
-let firstMax = function (nums) {
-    /*   return Math.max(...nums); */
-    return Math.max.apply(null, nums);
-}
-
-/* let firstMax = (nums) => {
-  const sortedNums =  nums.sort((a,b) => b-a);
-  return sortedNums[0];
-} */
-
-//third way
-//third way
+// Custom Second max third way
 let secondMax = (nums) => {
     let max, secondMax;
     if (nums[0] > nums[1]) {
         max = nums[0];
-        secondMax = [1];
+        secondMax = nums[1];
     } else {
         max = nums[1];
-        secondMax = [0];
+        secondMax = nums[0];
     }
 
     for (let i = 0; i < nums.length; i++) {

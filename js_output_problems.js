@@ -42,7 +42,7 @@ console.log(i); // 5 is displays immediately  */
 console.log(i); // Error: i is not defined */
 
 //  6. passing less argument gives NaN. passing more argument is fine(it ignores)
-// function overloading: should call fun with matching no of arguments. But it's calling  second func always.
+// function overloading: should call fun with matching no of arguments. But it's calling  second func always. => here, it's considering order
 /* function sum(a, b) {
 
   return a + b;
@@ -67,7 +67,7 @@ new Promise((resolve) => {
 
 // 8.
 /* var p = setInterval(() => {
-    console.log('setInterval');  // setInterval printed once
+    console.log('setInterval');  // setInterval printed once after 2 sec
     clearInterval(p);
 }, 2000); */
 
@@ -147,7 +147,7 @@ x()
 //   console.log("hello")
 // }
 
-// myFunction() // Error: `myFunction` is not a function
+// myFunction() // TypeError: `myFunction` is not a function
 // var myFunction = function () {
 //   console.log("hello")
 // }

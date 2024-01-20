@@ -23,7 +23,7 @@ function compare(a, b) {
 
 // Sort the array using the comparison function
 const sortedArray = inputArray.sort(compare);
-console.log(sortedArray);
+console.log(sortedArray);    // ['a', 'A', 'b', 'B', 'c', 'C', 'D', 'K', 'R', 'Y', 'Z']
 
 let upperAlphabets = [];
 let lowerAlphabets = [];

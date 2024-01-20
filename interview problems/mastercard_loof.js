@@ -111,6 +111,11 @@ var input = [
 
 // Reverse the order of rows
 var reversed = input.reverse();
+    // [
+    //     [6, 7, 8],
+    //     [3, 4, 5],
+    //     [0, 1, 2]
+    // ];
 
 // Transpose the matrix
 var output = [];
