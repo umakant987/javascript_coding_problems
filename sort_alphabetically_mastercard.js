@@ -4,6 +4,7 @@
 - current locale is based on the language settings of the browser.
 - string.localeCompare(compareString) */
 
+// Write a js program to sort the given array alphabetically
 const inputArray = ["A", "a", "B", "b", "Z", "c", "Y", "C", "D", "R", "K"];
 // output => ['A','B','C','D','K','R','Y','Z','a','b','c']
 

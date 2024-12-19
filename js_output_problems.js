@@ -132,12 +132,12 @@ x()
 
 // From 30 second of interview
 // To check hoisting knowledge
-// var foo = 1
-// var foobar = function () {
-//   console.log(foo) // undefined
-//   var foo = 2
-// }
-// foobar()
+var foo = 1
+var foobar = function () {
+  console.log(foo) // undefined
+  var foo = 2
+}
+foobar()
 
 // console.log(hoist) // undefined
 // var hoist = "value"
